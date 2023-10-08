@@ -1,3 +1,4 @@
+.gitignore
 asset/apiKey
 testEnv/
 __pycache__/
