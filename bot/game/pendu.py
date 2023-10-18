@@ -29,7 +29,7 @@ def printBadLetters(badLetters):
     str+='*'
     return str
 
-@tree.command(name="pendu")
+#@tree.command(name="pendu")
 async def pendu(interaction: discord.Interaction):
     def check(m):
         return m.channel == interaction.channel and len(m.content) == 1 and m.content in alphabet

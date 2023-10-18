@@ -21,7 +21,7 @@ async def on_ready():
     print("dodoBot is alive")
 
 
-@tree.command(name="say") 
+#@tree.command(name="say") 
 @app_commands.describe(arg = "what should i say ?")
 async def say(interaction: discord.Integration, arg: str):
     await interaction.response.send_message(f'{arg}')
