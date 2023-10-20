@@ -45,9 +45,12 @@ def get_day_difference(target_day):
     app_commands.Choice(name="jeudi", value="jeudi"),
     app_commands.Choice(name="vendredi", value="vendredi"),
     app_commands.Choice(name="samedi", value="samedi"),
-    app_commands.Choice(name="dimanche", value="dimanche")
+    app_commands.Choice(name="dimanche", value="dimanche"),
+    app_commands.Choice(name="none", value="none")
 ])
-async def edt(interaction: discord.Interaction, name: str, jour: str = datetime.datetime.now().strftime('%A')):
+async def edt(interaction: discord.Interaction, name: str, jour: str = "none"):
+    if jour == "none":
+        jour = datetime.datetime.now().strftime('%A')
     difference = get_day_difference(jour)
 
     if (interaction.user.id == admin["ID"]):
